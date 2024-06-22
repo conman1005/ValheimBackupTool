@@ -159,7 +159,7 @@ namespace ValheimBackup
             foreach (String worldName in worldFolder)
             {
                 // Get the World Name from the File Name
-                String Name = worldName.Split("\\")[worldName.Split("\\").Length - 1];
+                Name = worldName.Split("\\")[worldName.Split("\\").Length - 1];
 
                 // Check for current world files
                 if (Name.Split("_").Length < 2 && Name.Split(".").Length < 3 && Name.Split(".")[1].Equals("fwl"))
@@ -176,7 +176,7 @@ namespace ValheimBackup
             foreach (String characterName in characterFolder)
             {
                 // Get Character Name from File Name
-                String Name = characterName.Split("\\")[characterName.Split("\\").Length - 1];
+                Name = characterName.Split("\\")[characterName.Split("\\").Length - 1];
 
                 // Check for current world files
                 if (Name.Split("_").Length < 3 && Name.Split(".").Length < 3 && Name.Split(".")[1].Equals("fch"))
