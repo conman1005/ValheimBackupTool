@@ -49,7 +49,7 @@ namespace ValheimBackup
                 // Ask user for Valheim Save folder location if ini file does not exist
                 if (File.Exists(ini))
                 {
-                    //File.Delete(ini); // Test code for handling a file error when reading
+                    // File.Delete(ini); // Test code for handling a file error when reading
 
                     // Try to read ini file
                     try
@@ -68,6 +68,7 @@ namespace ValheimBackup
                     }
                     catch (IOException)
                     {
+                        // Delete ini file if error occors
                         File.Delete(ini);
                         //MessageBox.Show("Error opening Initiation File. Please restart this program");    No more need to restart program with this loop... Right???
                     }
@@ -89,6 +90,10 @@ namespace ValheimBackup
                             outputFile.WriteLine(defaultLocation);
                             outputFile.Close();
                         }
+
+                        // Set Character and World folder locations
+                        urlWorld = defaultLocation + "\\worlds_local";
+                        urlCharacter = defaultLocation + "\\characters_local";
                     }
                     else
                     {
