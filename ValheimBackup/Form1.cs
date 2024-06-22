@@ -21,7 +21,7 @@ namespace ValheimBackup
         {
             InitializeComponent();
 
-            MessageBox.Show(System.IO.Path.GetDirectoryName(Application.ExecutablePath));
+            //MessageBox.Show(System.IO.Path.GetDirectoryName(Application.ExecutablePath));
 
             String ini = "./ValheimBackupTool.ini";
             String defaultLocation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData).Split("Roaming")[0] + "LocalLow\\IronGate\\Valheim";

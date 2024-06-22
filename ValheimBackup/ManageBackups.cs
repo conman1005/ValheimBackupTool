@@ -50,6 +50,14 @@ namespace ValheimBackup
                 MessageBox.Show("Please select a World to Recover.");
                 return;
             }
+
+            DialogResult confirm = MessageBox.Show("Are you sure you want to Load " + lstNames.SelectedItem.ToString() + " saved at " + lstSaves.SelectedItem.ToString() + " ?\nCurrent save file WILL be lost.\nIf you prefer to have a copy of the current save,\nplease go back to the main menu and back up " + lstNames.SelectedItem.ToString() + " to ensure the data won't be lost.", "Confirm Recovery", MessageBoxButtons.YesNo);
+
+            if (confirm != DialogResult.Yes)
+            {
+                return;
+            }
+
             //DateTime time = DateTime.Now;
 
             /*// Create 'Backups' Directory if it doesn't exist
@@ -58,7 +66,7 @@ namespace ValheimBackup
                 Directory.CreateDirectory(folderURL + "/Backups");
             }*/
 
-            
+
 
             String path = lstURLs[lstNames.SelectedIndex]/*.Split("\\")[lstURLs[lstSaves.SelectedIndex].Split("\\").Length - 3] + "\\"*/;
             String nameFWL = path/* + lstURLs[lstSaves.SelectedIndex].Split("\\")[lstURLs[lstSaves.SelectedIndex].Split("\\").Length - 1]*/;
