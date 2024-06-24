@@ -2,7 +2,7 @@
  *              Authour: Conner Cullity
  *               GitHub: @conman1005
  *            Repo Link: https://github.com/conman1005/ValheimBackupTool
- *    Time of Last Edit: 2024-06-21 11:14 PM
+ *    Time of Last Edit: 2024-06-24 03:18 PM
  * 
  *     Form Description: This Form provides a User interface that allows
  *                       users to select a Character or World to back up
@@ -115,7 +115,7 @@ namespace ValheimBackup
                             // Close program if user clicks cancel or 'X'
                             if (result != DialogResult.OK)
                             {
-                                MessageBox.Show("You must provide the Valheim Save Locations for this program to work.\nThis program will now close.");
+                                MessageBox.Show("You must provide the Valheim Save Locations for this program to work.\nThis program will now close.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 Environment.Exit(-1);
                                 return;
                             }
@@ -241,7 +241,7 @@ namespace ValheimBackup
                 MessageBox.Show("Please select a Character to Back Up.");
                 return;
             }
-            
+
             // Initialize time as the current time
             DateTime time = DateTime.Now;
 
@@ -280,6 +280,21 @@ namespace ValheimBackup
 
             // Show the Character Management Form
             mngCharacters.Show();
+        }
+
+        private void manageCharacterBackupsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnMngChars_Click(sender, e);
+        }
+
+        private void manageWorldBackupsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnMngWorlds_Click(sender, e);
+        }
+
+        private void exitValheimBackupToolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

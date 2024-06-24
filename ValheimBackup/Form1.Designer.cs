@@ -37,6 +37,13 @@
             btnWorld = new Button();
             btnMngChars = new Button();
             btnMngWorlds = new Button();
+            menuStrip1 = new MenuStrip();
+            optionsToolStripMenuItem = new ToolStripMenuItem();
+            manageCharacterBackupsToolStripMenuItem = new ToolStripMenuItem();
+            manageWorldBackupsToolStripMenuItem = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            exitValheimBackupToolToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // lblCharacter
@@ -118,6 +125,49 @@
             btnMngWorlds.UseVisualStyleBackColor = true;
             btnMngWorlds.Click += btnMngWorlds_Click;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { optionsToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(418, 24);
+            menuStrip1.TabIndex = 8;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // optionsToolStripMenuItem
+            // 
+            optionsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manageCharacterBackupsToolStripMenuItem, manageWorldBackupsToolStripMenuItem, helpToolStripMenuItem, exitValheimBackupToolToolStripMenuItem });
+            optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            optionsToolStripMenuItem.Size = new Size(61, 20);
+            optionsToolStripMenuItem.Text = "Options";
+            // 
+            // manageCharacterBackupsToolStripMenuItem
+            // 
+            manageCharacterBackupsToolStripMenuItem.Name = "manageCharacterBackupsToolStripMenuItem";
+            manageCharacterBackupsToolStripMenuItem.Size = new Size(218, 22);
+            manageCharacterBackupsToolStripMenuItem.Text = "Manage Character Backups";
+            manageCharacterBackupsToolStripMenuItem.Click += manageCharacterBackupsToolStripMenuItem_Click;
+            // 
+            // manageWorldBackupsToolStripMenuItem
+            // 
+            manageWorldBackupsToolStripMenuItem.Name = "manageWorldBackupsToolStripMenuItem";
+            manageWorldBackupsToolStripMenuItem.Size = new Size(218, 22);
+            manageWorldBackupsToolStripMenuItem.Text = "Manage World Backups";
+            manageWorldBackupsToolStripMenuItem.Click += manageWorldBackupsToolStripMenuItem_Click;
+            // 
+            // helpToolStripMenuItem
+            // 
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new Size(218, 22);
+            helpToolStripMenuItem.Text = "Help";
+            // 
+            // exitValheimBackupToolToolStripMenuItem
+            // 
+            exitValheimBackupToolToolStripMenuItem.Name = "exitValheimBackupToolToolStripMenuItem";
+            exitValheimBackupToolToolStripMenuItem.Size = new Size(218, 22);
+            exitValheimBackupToolToolStripMenuItem.Text = "Exit Valheim Backup Tool";
+            exitValheimBackupToolToolStripMenuItem.Click += exitValheimBackupToolToolStripMenuItem_Click;
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -131,12 +181,16 @@
             Controls.Add(lstCharacter);
             Controls.Add(label1);
             Controls.Add(lblCharacter);
+            Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
             MaximizeBox = false;
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Valheim Backup Tool";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -151,5 +205,11 @@
         private Button btnWorld;
         private Button btnMngChars;
         private Button btnMngWorlds;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem optionsToolStripMenuItem;
+        private ToolStripMenuItem manageCharacterBackupsToolStripMenuItem;
+        private ToolStripMenuItem manageWorldBackupsToolStripMenuItem;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem exitValheimBackupToolToolStripMenuItem;
     }
 }
