@@ -173,12 +173,19 @@ namespace ValheimBackup
                     // Add save time to saves list
                     String[] saveDateTime = name.Split('.')[0].Split("\\")[name.Split('.')[0].Split("\\").Length - 1].Split("_")[1].Split(" ");
                     //lstSaves.Items.Add(saveDateTime[0].Replace("-", ":") + " " + saveDateTime[1]);
-                    times.Add(saveDateTime[0].Replace("-", ":") + " " + saveDateTime[1]);
+                    times.Add(saveDateTime[1] + " " + saveDateTime[0].Replace("-", ":"));
                 }
             }
 
-            // Sort List
-            times.Sort();
+            // Sort List in descending order
+            times.Sort((a, b) => b.CompareTo(a));
+
+            // Reset Names to have Dates at the beginning
+            for (int i = 0; i < times.Count; i++)
+            {
+                String[] name = times[i].Split(" ");
+                times[i] = name[1] + " " + name[0];
+            }
 
             // Add list to lstSaves
             lstSaves.DataSource = times;
