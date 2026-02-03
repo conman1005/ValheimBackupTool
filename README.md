@@ -13,6 +13,6 @@ To my knowledge, there was no app that did this available online when I develope
 ![Backup Character Image](/README-images/BackupCharacter.PNG)
 
 ### Manage Character Saves
-![Character Saves Image](/README-images/CharacterSaves.PNG)
+![Character Saves Image](/README-images/Character-Saves.PNG)
 ### Manage World Saves
-![World Saves Image](/README-images/WorldSaves.PNG)
+![World Saves Image](/README-images/World-Saves.PNG)
